@@ -25,12 +25,12 @@ public void keyPressed()
   }
   if(key == 'a')
   { 
-    bob.turn(-7);
+    bob.turn(-9);
     
   }
   if(key == 'd')
   {
-  bob.turn(7);
+  bob.turn(9);
      
   }
   if(key == 'w')
