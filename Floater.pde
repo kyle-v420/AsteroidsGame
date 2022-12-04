@@ -13,8 +13,8 @@ class Floater
   {           
     double dRadians =myPointDirection*(Math.PI/180);        
     myXspeed = myYspeed = ((dAmount) * Math.cos(dRadians));
-    myDirectionX += myXspeed;    
-    myDirectionY += myYspeed;       
+    myDirectionX += ((dAmount) * Math.cos(dRadians));    
+    myDirectionY += ((dAmount) * Math.sin(dRadians));             
   }   
   public void turn (int nDegreesOfRotation)   
   {       
