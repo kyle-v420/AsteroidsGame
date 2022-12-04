@@ -1,9 +1,17 @@
 Spaceship bob = new Spaceship();
+ArrayList<Asteroids> asteroidsList = new ArrayList<Asteroids>();
+int numberOfAsteroids = (int)(Math.random()*20)+5;
+
 
 void setup()
 {
   size(800, 800);
   textAlign(CENTER);
+  for (int i=0; i<numberOfAsteroids; i++)
+  {
+    asteroidsList.add(new Asteroids());
+  }
+  
 }
 
 void draw()
@@ -15,12 +23,21 @@ void draw()
    }
    bob.show();
    bob.move();
-
+  for (Asteroids ast : asteroidsList)
+  {
+    ast.turn(ast.getRotationSpeed());
+    ast.move();
+    ast.show();
+    float distantAstShip = dist((float)ast.getX(), (float)ast.getY(), (float)bob.getX(), (float)bob.getY());
+    
+    if (distantAstShip < 36)
+    {
+    }
+  }
 }
 public void keyPressed()
 { 
-  System.out.print(key);
-    if(key == 'h'){
+  if(key == 'h'){
     bob.hyperspace();
   }
   if(key == 'a')
@@ -42,4 +59,3 @@ public void keyPressed()
      bob.accelerate(-0.2);
   }
  }
-
