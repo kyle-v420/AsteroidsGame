@@ -3,6 +3,7 @@ ArrayList<Asteroids> asteroidsList = new ArrayList<Asteroids>();
 int numberOfAsteroids = (int)(Math.random()*30)+20;
 ArrayList<Bullet> bullets = new ArrayList<Bullet>();
 int HP = 50;
+int lmao = 0;
 boolean fail = false;
 boolean victory = false;
 
@@ -31,7 +32,7 @@ void draw()
   {    
     fail = true;
   }
-  if(asteroidsList.size() == 0){
+  if((asteroidsList.size() == 0) && (lmao == 0) ){
     victory = true;
   }
    bob.show();
@@ -105,8 +106,10 @@ public void wonGameFunc()
     asteroidsList.remove(i);
 
 }
+
 public void endGameFunc()
 {
+    lmao++;
     textSize(30);
     fill(0,0,255);
     fill(150);
@@ -118,4 +121,3 @@ public void endGameFunc()
     for(int i = 0; i<asteroidsList.size(); i++)
       asteroidsList.remove(i);
 }
-
