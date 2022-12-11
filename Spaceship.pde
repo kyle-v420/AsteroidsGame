@@ -28,4 +28,11 @@ public class Spaceship extends Floater
     public void setY(double n) {
         myCenterY = n;
     }
+    public void show2(){
+    fill(110);
+    rect((float)myCenterX - 25, (float)myCenterY + 20, HP, 5);
+    fill(0,255,0);
+    rect((float)myCenterX - 25, (float)myCenterY + 20, HP, 5);
+    }
+    
 }
